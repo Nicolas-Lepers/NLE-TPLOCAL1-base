@@ -26,6 +26,9 @@ namespace TPLOCAL1.Controllers
                         return View(id);
                     case "Form":
                         //TODO : call the Form view with data model empty
+                        return View(id, new AvisModel());
+                    case "AvisList":
+                        //TODO : call the Avis view with data model empty
                         return View(id);
                     default:
                         //retourn to the Index view (see routing in Program.cs)
@@ -37,12 +40,24 @@ namespace TPLOCAL1.Controllers
 
         //methode to send datas from form to validation page
         [HttpPost]
-        public ActionResult ValidationFormulaire(/*model*/)
+        public ActionResult ValidationFormulaire(AvisModel model)
         {
-            //TODO : test if model's fields are set
-            //if not, display an error message and stay on the form page
-            //else, call ValidationForm with the datas set by the user
-            return null;
+            var dateMax = new DateTime(2021, 01, 01);
+            if (model.DateDebut >= dateMax)
+            {
+                ModelState.AddModelError("DateDebut", "La date doit être avant le 01/01/2021");
+            }
+
+            if (ModelState.IsValid == false)
+            {
+                return View("Form", model);
+            }
+
+
+
+
+            ViewBag.Message = "Formulaire validé avec succès !";
+            return View("ValidationForm", model);
 
         }
     }

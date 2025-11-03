@@ -1,0 +1,105 @@
+﻿header {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.image {
+    width: 150px;
+    height: 150px;
+}
+
+form, section {
+    margin-left: 170px;
+    box-sizing: border-box;
+}
+
+h1 {
+    margin: 0;
+    text-align: center;
+}
+
+nav {
+    width: 150px;
+    border: 2px solid #8c014c;
+    background-color: #8c014c;
+    color: white;
+    float: left;
+}
+
+li {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+a {
+    color: chocolate;
+}
+
+.labelInfo {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    margin-top: 2px;
+    margin-bottom: 0;
+}
+
+.container {
+    width: fit-content;
+    margin-bottom: 20px;
+}
+
+input, select {
+    margin: 1px;
+}
+
+.form-row label {
+    white-space: nowrap;
+    padding: 1px;
+    border: 1px solid gray;
+    display: inline-block;
+    text-align: left;
+}
+
+.form-row {
+    display: contents;
+}
+
+.wrapper input,
+.wrapper select,
+.wrapper p {
+    width: auto;
+    height: 20px;
+    box-sizing: border-box;
+    margin: 1px;
+    padding: 1px;
+    border: 1px solid gray;
+}
+
+.wrapper {
+    width: auto;
+    box-sizing: border-box;
+    margin: 1px;
+    border: 1px solid gray;
+}
+
+.fieldsetPersonalInfo,
+.fieldsetFormationInfo,
+.fieldsetAvisFormation {
+    display: grid;
+    grid-template-columns: max-content auto;
+    /*gap: 5px 10px;*/
+    align-items: center;
+    /*width: fit-content;*/
+    /*padding: 1px;*/
+    /*border: 1px solid gray;*/
+}
+
+fieldset {
+    padding: 1px;
+    border: 1px solid gray;
+}
+
+.text-danger {
+    color: red;
+}

@@ -1,0 +1,116 @@
+﻿@model TPLOCAL1.Models.AvisModel
+
+<head>
+    <link rel="stylesheet" href="~/resources/Index.css" />
+    <title>Formulaire</title>
+</head>
+
+<body>
+    <header>
+        <img src="~/resources/GroupeHN.png" class="image" alt="GroupeHN" />
+        <h1>Page de validation</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/Home/Index">Accueil</a></li>
+            <li><a href="/Home/Index/AvisList">Liste avis</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <p>Votre formulaire a bien été pris en compte</p>
+
+        <div class="container">
+            <p class="labelInfo">Informations personnelles</p>
+            <fieldset class="fieldsetPersonalInfo">
+                <div class="form-row">
+                    <label class="wrapper">Nom</label>
+                    <div class="wrapper">
+                        <p>@Model.Nom</p>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label class="wrapper tailleInfo">Prénom</label>
+                    <div class="wrapper">
+                        <p>@Model.Prenom</p>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label class="wrapper tailleInfo">Sexe</label>
+                    <div class="wrapper">
+                        <p>@Model.Sexe</p>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label class="wrapper tailleInfo">Adresse</label>
+                    <div class="wrapper">
+                        <p>@Model.Adresse</p>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label class="wrapper tailleInfo">Code Postal</label>
+                    <div class="wrapper">
+                        <p>@Model.CodePostal</p>
+                    </div>
+                </div>
+
+
+                <div class="form-row">
+                    <label class="wrapper tailleInfo">Ville</label>
+                    <div class="wrapper">
+                        <p>@Model.Ville</p>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label class="wrapper tailleInfo">Adresse mail</label>
+                    <div class="wrapper">
+                        <p>@Model.Mail</p>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+
+        <div class="container">
+            <p class="labelInfo">Informations formation suivie</p>
+            <fieldset class="fieldsetFormationInfo">
+                <div class="form-row">
+                    <label class="wrapper tailleFormation">Date début formation</label>
+                    <div class="wrapper">
+                        <p>@Model.DateDebut?.ToString("dd/MM/yyyy")</p>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label class="wrapper tailleFormation">Formation suivie</label>
+                    <div class="wrapper">
+                        <p>@Model.Formation</p>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+
+        <div class="container">
+            <p class="labelInfo">Avis sur la formation</p>
+            <fieldset class="fieldsetAvisFormation">
+                <div class="form-row">
+                    <label class="wrapper tailleAvis">Formation Cobol</label>
+                    <div class="wrapper">
+                        <p>@Model.AvisCobol</p>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label class="wrapper tailleAvis">Formation C#</label>
+                    <div class="wrapper">
+                        <p>@Model.AvisCsharp</p>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </section>
+</body>
