@@ -1,0 +1,18 @@
+﻿@* Views/Shared/_HeaderNav.cshtml *@
+@model TPLOCAL1.Models.HeaderNavModel
+
+<header>
+    <img src="~/resources/GroupeHN.png" class="image" alt="GroupeHN" />
+    <div class="header-center">
+        <h1>@Model.Title</h1>
+    </div>
+</header>
+
+<nav>
+    <ul>
+        @foreach (var item in Model.NavItems)
+        {
+            <li><a href="@item.Url">@item.Text</a></li>
+        }
+    </ul>
+</nav>

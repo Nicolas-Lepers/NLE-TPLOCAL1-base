@@ -1,21 +1,25 @@
 ﻿@model TPLOCAL1.Models.AvisModel
 
+
+
 <head>
     <link rel="stylesheet" href="~/resources/Index.css" />
     <title>Formulaire</title>
 </head>
 
 <body>
-    <header>
-        <img src="~/resources/GroupeHN.png" class="image" alt="GroupeHN" />
-        <h1>Page de validation</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="/Home/Index">Accueil</a></li>
-            <li><a href="/Home/Index/AvisList">Liste avis</a></li>
-        </ul>
-    </nav>
+    @{
+        var headerModel = new TPLOCAL1.Models.HeaderNavModel
+        {
+            Title = "Page de validation",
+            NavItems = new List<TPLOCAL1.Models.NavItem>
+            {
+            new TPLOCAL1.Models.NavItem {Text = "Accueil", Url ="/Home/Index"},
+            new TPLOCAL1.Models.NavItem {Text = "Liste avis", Url ="/Home/Index/AvisList"},
+            }
+        };
+    }
+    <partial name="_HeaderNav" model="headerModel" />
 
     <section>
         <p>Votre formulaire a bien été pris en compte</p>

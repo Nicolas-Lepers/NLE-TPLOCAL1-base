@@ -6,16 +6,19 @@
 </head>
 
 <body>
-    <header>
-        <img src="~/resources/GroupeHN.png" class="image" alt="GroupeHN" />
-        <h1>Formulaire TP HN avis</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="/Home/Index">Accueil</a></li>
-            <li><a href="/Home/Index/AvisList">Liste avis</a></li>
-        </ul>
-    </nav>
+    @{
+        var headerModel = new TPLOCAL1.Models.HeaderNavModel
+        {
+            Title = "Formulaire TP HN avis",
+            NavItems = new List<TPLOCAL1.Models.NavItem>
+            {
+            new TPLOCAL1.Models.NavItem {Text = "Accueil", Url ="/Home/Index"},
+            new TPLOCAL1.Models.NavItem {Text = "Liste avis", Url ="/Home/Index/AvisList"},
+            }
+        };
+    }
+    <partial name="_HeaderNav" model="headerModel" />
+
     <form asp-action="ValidationFormulaire" method="post">
         <div class="container">
             <p class="labelInfo">Informations personnelles</p>
@@ -23,7 +26,7 @@
                 <div class="form-row">
                     <label class="wrapper">Nom</label>
                     <div class="wrapper">
-                        <input asp-for="Nom" placeholder="Dupont"/>
+                        <input asp-for="Nom" placeholder="Dupont" />
                         <span asp-validation-for="Nom" class="text-danger"></span>
                     </div>
                 </div>
@@ -31,7 +34,7 @@
                 <div class="form-row">
                     <label class="wrapper">Prénom</label>
                     <div class="wrapper">
-                        <input asp-for="Prenom" placeholder="Marie"/>
+                        <input asp-for="Prenom" placeholder="Marie" />
                         <span asp-validation-for="Prenom" class="text-danger"></span>
                     </div>
                 </div>
@@ -60,7 +63,7 @@
                 <div class="form-row">
                     <label class="wrapper">Code Postal</label>
                     <div class="wrapper">
-                        <input asp-for="CodePostal" placeholder="90111"/>
+                        <input asp-for="CodePostal" placeholder="90111" />
                         <span asp-validation-for="CodePostal" class="text-danger"></span>
                     </div>
                 </div>
@@ -69,7 +72,7 @@
                 <div class="form-row">
                     <label class="wrapper">Ville</label>
                     <div class="wrapper">
-                        <input asp-for="Ville" placeholder="Paris"/>
+                        <input asp-for="Ville" placeholder="Paris" />
                         <span asp-validation-for="Ville" class="text-danger"></span>
                     </div>
                 </div>
@@ -77,7 +80,7 @@
                 <div class="form-row">
                     <label class="wrapper">Adresse mail</label>
                     <div class="wrapper">
-                        <input asp-for="Mail" placeholder="DupontM@gmail.com"/>
+                        <input asp-for="Mail" placeholder="DupontM@gmail.com" />
                         <span asp-validation-for="Mail" class="text-danger"></span>
                     </div>
                 </div>
@@ -90,7 +93,7 @@
                 <div class="form-row">
                     <label class="wrapper">Date début formation</label>
                     <div class="wrapper">
-                        <input asp-for="DateDebut" type="date"/>
+                        <input asp-for="DateDebut" type="date" />
                         <span asp-validation-for="DateDebut" class="text-danger"></span>
                     </div>
                 </div>
@@ -129,7 +132,7 @@
             </fieldset>
         </div>
 
-        <input type="submit" value="Valider"/>
+        <input type="submit" value="Valider" />
     </form>
 
     @section Scripts{

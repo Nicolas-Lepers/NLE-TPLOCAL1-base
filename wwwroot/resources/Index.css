@@ -1,12 +1,17 @@
 ﻿header {
     display: flex;
     align-items: center;
-    gap: 50px;
+    position: relative;
+    width:100%;
 }
 
 .image {
     width: 150px;
     height: 150px;
+}
+.header-center{
+    flex: 1;
+    text-align:center;
 }
 
 form, section {
@@ -95,6 +100,12 @@ input, select {
     /*border: 1px solid gray;*/
 }
 
+.fieldsetListAvis {
+    display: grid;
+    grid-template-columns: max-content auto;
+    align-items: center;
+}
+
 fieldset {
     padding: 1px;
     border: 1px solid gray;
@@ -102,4 +113,31 @@ fieldset {
 
 .text-danger {
     color: red;
+}
+
+.avis-table {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 2px; 
+}
+
+.row {
+    display: contents;
+}
+
+    .row > div {
+        border: 1px solid #aaa;
+        padding: 2px 4px;
+    }
+
+.header > div {
+    font-weight: bold;
+}
+
+.avis.oui {
+    background: green;
+}
+
+.avis.non {
+    background: red;
 }

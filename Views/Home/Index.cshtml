@@ -4,16 +4,19 @@
 </head>
 
 <body>
-    <header>
-        <img src="~/resources/GroupeHN.png" class="image" alt="GroupeHN" />
-        <h1>Bienvenue dans le TP HN</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="/Home/Index/Form">Formulaire</a></li>
-            <li><a href="/Home/Index/AvisList">Liste avis</a></li>
-        </ul>
-    </nav>
+    @{
+        var headerModel = new TPLOCAL1.Models.HeaderNavModel
+        {
+            Title = "Bienvenue dans le TP HN",
+            NavItems = new List<TPLOCAL1.Models.NavItem>
+            {
+            new TPLOCAL1.Models.NavItem {Text = "Formulaire", Url ="/Home/Index/Form"},
+            new TPLOCAL1.Models.NavItem {Text = "Liste avis", Url ="/Home/Index/AvisList"},
+            }
+        };
+    }
+    <partial name="_HeaderNav" model="headerModel" />
+   
     <section>
         <p>
             <a href="/Home/Index/Form">Remplir le formulaire</a>

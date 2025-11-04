@@ -21,15 +21,14 @@ namespace TPLOCAL1.Controllers
                 //Call different pages, according to the id pass as parameter
                 switch (id)
                 {
-                    case "OpinionList":
-                        //TODO : code reading of the xml files provide
-                        return View(id);
                     case "Form":
-                        //TODO : call the Form view with data model empty
                         return View(id, new AvisModel());
+
                     case "AvisList":
-                        //TODO : call the Avis view with data model empty
-                        return View(id);
+                        string filePath = Path.Combine(Directory.GetCurrentDirectory(), "XlmFile", "DataAvis.xml");
+                        OpinionList opinionList = new OpinionList();
+                        var avis = opinionList.GetAvis(filePath);
+                        return View(id,avis);
                     default:
                         //retourn to the Index view (see routing in Program.cs)
                         return View();
@@ -38,7 +37,6 @@ namespace TPLOCAL1.Controllers
         }
 
 
-        //methode to send datas from form to validation page
         [HttpPost]
         public ActionResult ValidationFormulaire(AvisModel model)
         {
@@ -53,12 +51,8 @@ namespace TPLOCAL1.Controllers
                 return View("Form", model);
             }
 
-
-
-
             ViewBag.Message = "Formulaire validé avec succès !";
             return View("ValidationForm", model);
-
         }
     }
 }
